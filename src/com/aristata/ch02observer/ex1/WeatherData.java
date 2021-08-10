@@ -1,4 +1,4 @@
-package com.aristata.ch02observer;
+package com.aristata.ch02observer.ex1;
 
 import java.util.ArrayList;
 
