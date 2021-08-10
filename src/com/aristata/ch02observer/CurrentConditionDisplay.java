@@ -16,7 +16,7 @@ public class CurrentConditionDisplay implements Observer, DisplayElement {
     @Override
     public void display() {
         String s1 = "Current conditions: ";
-        String s2 = "C degrees and ";
+        String s2 = "F degrees and ";
         String s3 = "% humidity";
         String s4 = s1 + temperature + s2 + humidity + s3;
 
