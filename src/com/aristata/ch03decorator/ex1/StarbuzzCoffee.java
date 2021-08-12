@@ -1,9 +1,6 @@
 package com.aristata.ch03decorator.ex1;
 
-import com.aristata.ch03decorator.ex1.coffee.Beverage;
-import com.aristata.ch03decorator.ex1.coffee.DarkRoast;
-import com.aristata.ch03decorator.ex1.coffee.Espresso;
-import com.aristata.ch03decorator.ex1.coffee.HouseBlend;
+import com.aristata.ch03decorator.ex1.coffee.*;
 import com.aristata.ch03decorator.ex1.condiment.Mocha;
 import com.aristata.ch03decorator.ex1.condiment.Soy;
 import com.aristata.ch03decorator.ex1.condiment.SteamMilk;
@@ -15,17 +12,26 @@ public class StarbuzzCoffee {
         System.out.println(beverage.getDescription() + " $" + beverage.cost());
 
         Beverage beverage1 = new DarkRoast(); // (2)
+        beverage1.setSize(BeverageSize.GRANDE);
         beverage1 = new Mocha(beverage1);
         beverage1 = new Mocha(beverage1);
         beverage1 = new Whip(beverage1);
         System.out.println(beverage1.getDescription() + " $" + beverage1.cost());
 
         Beverage beverage2 = new HouseBlend(); // (3)
+        beverage2.setSize(BeverageSize.VENTI);
         beverage2 = new Soy(beverage2);
         beverage2 = new SteamMilk(beverage2);
         beverage2 = new Mocha(beverage2);
         beverage2 = new Whip(beverage2);
         System.out.println(beverage2.getDescription() + " $" + beverage2.cost());
+
+        Beverage beverage3 = new Decaf();
+        beverage3.setSize(BeverageSize.GRANDE);
+        beverage3 = new SteamMilk(beverage3);
+        beverage3 = new Mocha(beverage3);
+        beverage3 = new Whip(beverage3);
+        System.out.println(beverage3.getDescription() + " $" + beverage3.cost());
     }
     /*
      * (1) 아무것도 넣지 않은 에스프레소를 주문하고 그 음료에 대한 설명과 가격을 출력한다.

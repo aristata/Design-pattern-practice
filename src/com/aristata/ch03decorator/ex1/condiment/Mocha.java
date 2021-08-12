@@ -1,6 +1,7 @@
 package com.aristata.ch03decorator.ex1.condiment;
 
 import com.aristata.ch03decorator.ex1.coffee.Beverage;
+import com.aristata.ch03decorator.ex1.coffee.BeverageSize;
 
 public class Mocha extends CondimentDecorator { // (1)
     Beverage beverage; // (2)
@@ -11,7 +12,9 @@ public class Mocha extends CondimentDecorator { // (1)
 
     @Override
     public double cost() {
-        return 0.2 + beverage.cost();
+        double condimentCost = 0.2;
+        double cost = beverage.cost();
+        return calculateSizeCost(beverage.getSize(), cost, condimentCost);
     } // (4)
 
     @Override
@@ -21,6 +24,11 @@ public class Mocha extends CondimentDecorator { // (1)
                 .append(", 모카")
                 .toString();
     } // (5)
+
+    @Override
+    public BeverageSize getSize() {
+        return beverage.getSize();
+    }
 
     /*
      * (1) Mocha 는 첨가물이기 때문에 CondimentDecorator 를 확장한다.

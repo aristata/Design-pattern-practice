@@ -2,8 +2,8 @@ package com.aristata.ch03decorator.ex1.coffee;
 
 public class Espresso extends Beverage { // (1)
     public Espresso() {
-        description = "에스프레소"; // (2)
-    }
+        description = "에스프레소";
+    } // (2)
 
     @Override
     public double cost() {
