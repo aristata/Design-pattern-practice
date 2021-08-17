@@ -5,13 +5,13 @@ import java.util.List;
 
 abstract public class Pizza {
 
-    String name;
+    public String name;
 
-    String dough;
+    public String dough;
 
-    String sauce;
+    public String sauce;
 
-    List<String> toppings = new ArrayList<>();
+    public List<String> toppings = new ArrayList<>();
 
     public String getName() {
         return name;
@@ -35,7 +35,10 @@ abstract public class Pizza {
 
     @Override
     public String toString() {
+        return makeStringMessage(name, dough, sauce, toppings);
+    }
 
+    public static String makeStringMessage(String name, String dough, String sauce, List<String> toppings) {
         StringBuffer display = new StringBuffer();
         display.append("---- " + name + " ----\n");
         display.append(dough + "\n");
