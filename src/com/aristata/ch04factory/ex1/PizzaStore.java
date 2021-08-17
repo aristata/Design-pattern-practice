@@ -1,16 +1,15 @@
 package com.aristata.ch04factory.ex1;
 
 public class PizzaStore {
+    SimplePizzaFactory factory;
 
-    Pizza orderPizza(String type) {
+    public PizzaStore(SimplePizzaFactory factory) {
+        this.factory = factory;
+    }
+
+    Pizza orderPizza(PizzaType type) {
         Pizza pizza;
-
-        if (type.equals("cheese")) {
-            pizza = new CheesePizza();
-        } else {
-            pizza = new PepperoniPizza();
-        }
-
+        pizza = factory.createPizza(type);
         pizza.prepare();
         pizza.bake();
         pizza.cut();
