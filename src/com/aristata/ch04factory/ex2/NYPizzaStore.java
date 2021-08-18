@@ -4,7 +4,7 @@ import com.aristata.ch04factory.ex1.PizzaType;
 
 public class NYPizzaStore extends PizzaStore {
     @Override
-    Pizza createPizza(PizzaType pizzaType) {
+    public Pizza createPizza(PizzaType pizzaType) {
         if (pizzaType == PizzaType.CHEESE) {
             return new NYStyleCheesePizza();
         } else if (pizzaType == PizzaType.VEGGIE) {
