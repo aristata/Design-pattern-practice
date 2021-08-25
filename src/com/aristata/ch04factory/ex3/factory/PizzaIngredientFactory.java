@@ -1,4 +1,6 @@
-package com.aristata.ch04factory.ex3.ingredient;
+package com.aristata.ch04factory.ex3.factory;
+
+import com.aristata.ch04factory.ex3.ingredient.*;
 
 public interface PizzaIngredientFactory {
     public Dough createDough();
